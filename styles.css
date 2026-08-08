@@ -1643,9 +1643,24 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+        border-radius: 12px;
+    }
+
+    .tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
     .project-card {
         aspect-ratio: auto;
-        min-height: 380px;
+        min-height: auto;
     }
 
     .footer-content {
@@ -1657,5 +1672,40 @@ footer {
 @media (max-width: 600px) {
     .about-competencies-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 4rem 1.25rem;
+    }
+    
+    .hero-container {
+        padding: 6rem 1.25rem 3rem;
+    }
+    
+    .hero-name-large {
+        font-size: 2.4rem;
+        line-height: 1.2;
+    }
+    
+    .hero-typewriter-container {
+        font-size: 1.2rem;
+    }
+    
+    .hero-desc-styled {
+        font-size: 0.95rem;
+    }
+    
+    .project-card {
+        padding: 1.25rem;
+    }
+    
+    .card-schematic {
+        height: 140px;
+    }
+    
+    .about-profile-card {
+        padding: 1.5rem;
     }
 }
