@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="GDC Case Study: The Last Resistance AR - Adapting physical tabletop board game asymmetry into marker-based Mobile AR.">
+    <title>The Last Resistance AR | Game Design Case Study</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <canvas id="space-canvas"></canvas>
+    <div class="nebula nebula-purple"></div>
+    <div class="nebula nebula-cyan"></div>
+
+    <!-- Floating Navigation Back Button -->
+    <nav class="back-nav">
+        <a href="../index.html#projects" class="back-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Portfolio
+        </a>
+    </nav>
+
+    <!-- 1 Hero Banner -->
+    <header class="hero-banner">
+        <div class="hero-banner-content">
+            <span class="banner-tag">Systems & Hybrid Design Case Study</span>
+            <h1 class="banner-title">The Last Resistance AR</h1>
+            <p class="banner-subtitle">Adapting physical tabletop board game asymmetry into a marker-based Mobile AR
+                companion experience.</p>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="case-study-container">
+        <!-- Main Case Study Content -->
+        <main class="case-study-main">
+            <!-- 3 Project Overview -->
+            <section id="overview" class="reveal-on-scroll">
+                <h2 class="section-header">Project Overview</h2>
+                <p class="case-paragraph">
+                    <strong>The Last Resistance</strong> is a narrative-driven, asymmetrical strategy board game set in
+                    an alternate Cold War scenario. In the tabletop version, one player commands the Soviet occupation
+                    force—wielding strongholds, reinforcements and long-range artillery—while three other players
+                    coordinate as Rebel cells attempting to liberate their city.
+                </p>
+                <p class="case-paragraph">
+                    The AR Adaptation merges the physical board game with a marker-based mobile app. The goal is to
+                    offload administrative systems—specifically hidden player roles, real-time morale variables and
+                    artillery targeting overlays—into the digital space, allowing players to focus entirely on social
+                    dynamics, coordination and tabletop strategy.
+                </p>
+            </section>
+
+            <!-- 4 Design Challenge -->
+            <section id="challenge" class="reveal-on-scroll">
+                <h2 class="section-header">The Design Challenge</h2>
+                <div class="callout-panel">
+                    <p class="case-paragraph" style="margin-bottom: 0;">
+                        How do we integrate Augmented Reality into a physical board game without breaking the "tabletop
+                        magic"? Playtesting indicated that full digitization turned a highly interactive, face-to-face
+                        strategy game into a disconnected screen-staring experience. The challenge lay in establishing a
+                        design framework for <strong>selective digitization</strong>—converting only systems that
+                        benefit from real-time simulation and keeping physical elements tactile.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 5 Design Goals -->
+            <section id="goals" class="reveal-on-scroll">
+                <h2 class="section-header">Design Goals</h2>
+                <ul class="case-list">
+                    <li class="case-list-item"><strong>Preserve Board Tactility:</strong> The map, tokens and movement
+                        must remain physical. AR should act as an overlay, not a replacement.</li>
+                    <li class="case-list-item"><strong>Minimize Administrative Friction:</strong> Automate hidden cards,
+                        variable calculation and turns. Reduce game-state tracking time.</li>
+                    <li class="case-list-item"><strong>Enhance Psychological Tension:</strong> Use private digital UI to
+                        manage hidden identities and betrayal states without human error or leakage.</li>
+                    <li class="case-list-item"><strong>Improve Visual Feedback:</strong> Project real-time tactical
+                        overlays (e.g. Soviet artillery threat zones) onto the board to build anticipation.</li>
+                </ul>
+            </section>
+
+            <!-- 6 Core Gameplay Loop -->
+            <section id="loop" class="reveal-on-scroll">
+                <h2 class="section-header">Core Gameplay Loop</h2>
+                <p class="case-paragraph">
+                    The core loop coordinates the physical placement of tokens with the digital evaluation of
+                    parameters. Every action is registered, leading to an updated AR view:
+                </p>
+                <div class="diagram-container">
+                    <div class="loop-flow">
+                        <div class="loop-node">
+                            <div class="loop-node-icon">🎲</div>
+                            <span class="loop-node-title">Physical Move</span>
+                        </div>
+                        <div class="loop-arrow"></div>
+                        <div class="loop-node">
+                            <div class="loop-node-icon">📱</div>
+                            <span class="loop-node-title">Scan Tile</span>
+                        </div>
+                        <div class="loop-arrow"></div>
+                        <div class="loop-node">
+                            <div class="loop-node-icon">⚡</div>
+                            <span class="loop-node-title">AR Event Trigger</span>
+                        </div>
+                        <div class="loop-arrow"></div>
+                        <div class="loop-node">
+                            <div class="loop-node-icon">📊</div>
+                            <span class="loop-node-title">Update Morale</span>
+                        </div>
+                    </div>
+                    <span class="diagram-caption">Figure: Asymmetrical Player Loop merging physical steps with AR system
+                        tracking.</span>
+                </div>
+            </section>
+
+            <!-- 7 Core Systems -->
+            <section id="systems" class="reveal-on-scroll">
+                <h2 class="section-header">Core Systems</h2>
+                <h3 class="subsection-header">1. Dynamic Morale System</h3>
+                <p class="case-paragraph">
+                    Rebels operate on a Morale scale (0–10). In the board game, tracking this manually with cardboard
+                    slides felt tedious and lacked emotional impact. In AR, floating desaturated meters are projected
+                    directly above each player's token. The meter's color state (cyan, purple, critical red) shifts
+                    instantly in response to events, turning morale into a live system players actively watch.
+                </p>
+                <h3 class="subsection-header">2. The Hidden Betrayal System</h3>
+                <p class="case-paragraph">
+                    One Rebel role card secretly contains the "Corruptible" trait. When a specific stronghold—*Tatarin's
+                    Command Outpost*—is captured, a hidden trigger fires. The AR app evaluates who holds the card and
+                    privately pushes an offer: "Switch sides and join the Soviet Leader." The AR app handles this
+                    transition silently, hiding the new Soviet Ally's identity (*General Bulba*) until they decide to
+                    deploy their hidden strength.
+                </p>
+                <h3 class="subsection-header">3. Soviet Artillery Warning HUD</h3>
+                <p class="case-paragraph">
+                    Every three rounds, the Soviet Leader can call in shelling. Rather than rolling dice on target
+                    charts, the AR app projects a pulsing red warning grid onto the targeted board spaces. This forces
+                    Rebels in those zones to make an immediate tactical choice: spend resources to escape during their
+                    turn, or brace for morale damage.
+                </p>
+            </section>
+
+            <!-- 8 Design Decisions -->
+            <section id="decisions" class="reveal-on-scroll">
+                <h2 class="section-header">Design Decisions: Physical vs. Digital</h2>
+                <p class="case-paragraph">
+                    To maintain gameplay balance, systems were separated into three clear layers:
+                </p>
+                <table
+                    style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid rgba(255, 255, 255, 0.1); color: #ffffff;">
+                            <th style="padding: 0.75rem;">System Classification</th>
+                            <th style="padding: 0.75rem;">Game Element</th>
+                            <th style="padding: 0.75rem;">Reasoning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                            <td style="padding: 0.75rem; font-weight: 600; color: var(--accent-cyan);">Physical Layer
+                            </td>
+                            <td style="padding: 0.75rem;">Board Layout, Token Movement, Combat Dice</td>
+                            <td style="padding: 0.75rem;">Maintains social presence, spatial orientation, and tactile
+                                satisfaction.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                            <td style="padding: 0.75rem; font-weight: 600; color: var(--accent-purple);">AR Digital
+                                Layer</td>
+                            <td style="padding: 0.75rem;">Morale Bars, Secret Identities, Card Decks, Target Zones</td>
+                            <td style="padding: 0.75rem;">Automates math, prevents accidental information leaks, and
+                                displays visual hazards.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                            <td style="padding: 0.75rem; font-weight: 600; color: #ffd166;">Hybrid Integration</td>
+                            <td style="padding: 0.75rem;">Dice roll outcomes evaluated by camera feed</td>
+                            <td style="padding: 0.75rem;">Saves physical roll satisfaction while automating outcome
+                                calculation.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- 9 Problems Faced -->
+            <section id="problems" class="reveal-on-scroll">
+                <h2 class="section-header">Problems Faced</h2>
+                <h3 class="subsection-header">The "Phone Passing" Loophole</h3>
+                <p class="case-paragraph">
+                    Originally, event cards were drawn from a single shared phone. This completely ruined the secret
+                    role mechanic because other players could read visual cues or notice how long a player spent looking
+                    at a screen.
+                </p>
+                <h3 class="subsection-header">Marker Occlusion</h3>
+                <p class="case-paragraph">
+                    During intense moves, players' hands repeatedly blocked the board markers, causing AR tracking to
+                    break and causing UI drift.
+                </p>
+            </section>
+
+            <!-- 10 Iterations -->
+            <section id="iterations" class="reveal-on-scroll">
+                <h2 class="section-header">Design Iterations</h2>
+                <div class="comparison-grid">
+                    <div class="callout-panel">
+                        <div class="callout-title">Iteration 1: Shared Mobile Hub</div>
+                        <p class="case-paragraph" style="font-size: 0.95rem;">
+                            A single mobile device sat beside the board. Players passed it to draw event cards and
+                            update stats.
+                            <br><br>
+                            <strong>Result:</strong> Playtesting failed. Passing the phone took players out of the board
+                            experience and created massive down-time.
+                        </p>
+                    </div>
+                    <div class="callout-panel cyan">
+                        <div class="callout-title">Iteration 2: Local Network Sync</div>
+                        <p class="case-paragraph" style="font-size: 0.95rem;">
+                            Moved to a synchronized system where each player scanned the board with their own device.
+                            Private information (roles, traits) was sent exclusively to that player's screen.
+                            <br><br>
+                            <strong>Result:</strong> Success. Secrecy was maintained, and floating stats updated in
+                            real-time across all views.
+                        </p>
+                    </div>
+                </div>
+                <h3 class="subsection-header">Resolving Occlusion: Board Anchoring</h3>
+                <p class="case-paragraph">
+                    To resolve tracking loss, we abandoned tracking individual tokens. Instead, the AR system anchors
+                    onto a single primary board marker. The software calculates offsets for all spaces on the layout.
+                    Even if a player blocks a token, the coordinate coordinates are preserved.
+                </p>
+            </section>
+
+            <!-- 11 Playtesting -->
+            <section id="playtesting" class="reveal-on-scroll">
+                <h2 class="section-header">Playtesting & Performance Metrics</h2>
+                <p class="case-paragraph">
+                    Playtesting sessions conducted over a 2-week period with diverse gamer profiles yielded the
+                    following data:
+                </p>
+                <ul class="case-list">
+                    <li class="case-list-item"><strong>Game Duration reduction:</strong> Average match time dropped from
+                        75 minutes (manually calculating event text and meters) to 42 minutes.</li>
+                    <li class="case-list-item"><strong>Rules Verification:</strong> Instantly evaluating legal spaces
+                        for Rebel movements dropped rulebook checking disputes to zero.</li>
+                    <li class="case-list-item"><strong>Betrayal Engagement:</strong> 90% of players reported higher
+                        immersion during the hidden betrayal trigger, as they didn't have to announce anything
+                        physically.</li>
+                </ul>
+            </section>
+
+            <!-- 12 Lessons Learned -->
+            <section id="lessons" class="reveal-on-scroll">
+                <h2 class="section-header">Lessons Learned</h2>
+                <p class="case-paragraph">
+                    <strong>AR is a Supporting Actor:</strong> Augmented Reality works best when it operates as an
+                    invisible game master. When design forces the player to stare at a screen for more than 15 seconds
+                    during a tabletop game, the social layer breaks down. Keep overlays visual, fast, and responsive.
+                </p>
+            </section>
+
+            <!-- 13 Final Outcome -->
+            <section id="outcome" class="reveal-on-scroll">
+                <h2 class="section-header">Final Outcome</h2>
+                <p class="case-paragraph">
+                    The hybrid board design successfully balanced asymmetrical mechanics with digital automation. The
+                    project demonstrates an advanced level design and systems framework—proving that hardware tracking
+                    and digital UI can enhance traditional, face-to-face social strategy games.
+                </p>
+            </section>
+
+            <!-- 14 Gallery -->
+            <section id="gallery" class="reveal-on-scroll">
+                <div class="gallery-header">
+                    <h2 class="section-header">Gallery</h2>
+                    <div class="slider-controls">
+                        <button class="slider-btn prev-btn" id="prev-gallery-btn" aria-label="Previous image">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <button class="slider-btn next-btn" id="next-gallery-btn" aria-label="Next image">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-viewport">
+                        <div class="slider-track" id="gallery-track">
+                            <div class="slider-slide" data-caption="Final Physical Tabletop Board Design">
+                                <img src="../The_Last_Resistance_AR_Gallery/Final_PhysicalBoard_Design.png" alt="Final Physical Tabletop Board Design">
+                                <div class="slide-caption-overlay">
+                                    <span class="slide-title">Final Physical Tabletop Board Design</span>
+                                </div>
+                            </div>
+                            <div class="slider-slide" data-caption="AR Mobile Companion Scanner">
+                                <img src="../The_Last_Resistance_AR_Gallery/Board_Scanning.png" alt="AR Mobile Companion Scanner">
+                                <div class="slide-caption-overlay">
+                                    <span class="slide-title">AR Mobile Companion Scanner</span>
+                                </div>
+                            </div>
+                            <div class="slider-slide" data-caption="Augmented Reality Board Overlay View">
+                                <img src="../The_Last_Resistance_AR_Gallery/Scanned_Board_OnPhone.png" alt="Augmented Reality Board Overlay View">
+                                <div class="slide-caption-overlay">
+                                    <span class="slide-title">Augmented Reality Board Overlay View</span>
+                                </div>
+                            </div>
+                            <div class="slider-slide" data-caption="Live Status and Morale UI in AR">
+                                <img src="../The_Last_Resistance_AR_Gallery/Meters_in_AR.png" alt="Live Status and Morale UI in AR">
+                                <div class="slide-caption-overlay">
+                                    <span class="slide-title">Live Status and Morale UI in AR</span>
+                                </div>
+                            </div>
+                            <div class="slider-slide" data-caption="Asymmetrical Physical Character Cards">
+                                <img src="../The_Last_Resistance_AR_Gallery/Character_Cards_Distribution.png" alt="Asymmetrical Physical Character Cards">
+                                <div class="slide-caption-overlay">
+                                    <span class="slide-title">Asymmetrical Physical Character Cards</span>
+                                </div>
+                            </div>
+                            <div class="slider-slide" data-caption="Physical Tabletop Combat Resolution">
+                                <img src="../The_Last_Resistance_AR_Gallery/Gameplay_2.png" alt="Physical Tabletop Combat Resolution">
+                                <div class="slide-caption-overlay">
+                                    <span class="slide-title">Physical Tabletop Combat Resolution</span>
+                                </div>
+                            </div>
+                            <div class="slider-slide" data-caption="Soviet Artillery Shelling Zone HUD">
+                                <img src="../The_Last_Resistance_AR_Gallery/Gameplay_4.png" alt="Soviet Artillery Shelling Zone HUD">
+                                <div class="slide-caption-overlay">
+                                    <span class="slide-title">Soviet Artillery Shelling Zone HUD</span>
+                                </div>
+                            </div>
+                            <div class="slider-slide" data-caption="Real-time Mobile Companion Setup">
+                                <img src="../The_Last_Resistance_AR_Gallery/Gameplay_5.png" alt="Real-time Mobile Companion Setup">
+                                <div class="slide-caption-overlay">
+                                    <span class="slide-title">Real-time Mobile Companion Setup</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 2 Design Snapshot Sidebar -->
+        <aside class="design-snapshot glass-panel reveal-on-scroll" style="transition-delay: 0.1s;">
+            <h3 class="snapshot-title">Design Snapshot</h3>
+            <div class="snapshot-grid">
+                <div class="snapshot-item">
+                    <span class="snapshot-label">Role</span>
+                    <span class="snapshot-value accent">Lead Systems & AR Adaptation Designer</span>
+                </div>
+                <div class="snapshot-item">
+                    <span class="snapshot-label">Team Size</span>
+                    <span class="snapshot-value">4 Players (Tabletop) / Solo (AR App)</span>
+                </div>
+                <div class="snapshot-item">
+                    <span class="snapshot-label">Duration</span>
+                    <span class="snapshot-value">6 Weeks</span>
+                </div>
+                <div class="snapshot-item">
+                    <span class="snapshot-label">Engine</span>
+                    <span class="snapshot-value">Unity (AR Foundation / Vuforia)</span>
+                </div>
+                <div class="snapshot-item">
+                    <span class="snapshot-label">Platform</span>
+                    <span class="snapshot-value">Mobile (Android/iOS) + Physical Board</span>
+                </div>
+                <div class="snapshot-item">
+                    <span class="snapshot-label">Genre</span>
+                    <span class="snapshot-value">Asymmetrical Strategy Tabletop</span>
+                </div>
+                <div class="snapshot-item">
+                    <span class="snapshot-label">Design Focus</span>
+                    <span class="snapshot-value">Augmented Reality UI, Systems Automation, Psychological Tension</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                &copy; 2026 Paras Garg. All systems operational.
+            </div>
+            <div class="footer-text">
+                The Last Resistance AR Postmortem
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="gallery-lightbox" class="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Space canvas setup
+            const canvas = document.getElementById('space-canvas');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                let stars = [];
+                const maxStars = 800;
+
+                const resizeCanvas = () => {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                    stars = [];
+                    for (let i = 0; i < maxStars; i++) {
+                        stars.push({
+                            x: Math.random() * canvas.width,
+                            y: Math.random() * canvas.height,
+                            size: Math.random() * 1.1,
+                            brightness: Math.random(),
+                            speed: 0.005 + Math.random() * 0.01
+                        });
+                    }
+                };
+
+                const animate = () => {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    for (let star of stars) {
+                        star.brightness += star.speed;
+                        if (star.brightness > 1 || star.brightness < 0) {
+                            star.speed = -star.speed;
+                        }
+                        ctx.fillStyle = `rgba(255, 255, 255, ${Math.min(star.brightness, 0.8)})`;
+                        ctx.beginPath();
+                        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                    requestAnimationFrame(animate);
+                };
+
+                window.addEventListener('resize', resizeCanvas);
+                resizeCanvas();
+                animate();
+            }
+
+            // Scroll reveal
+            const revealElements = document.querySelectorAll('.reveal-on-scroll');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                rootMargin: '0px 0px -100px 0px',
+                threshold: 0.1
+            });
+            revealElements.forEach(elem => revealObserver.observe(elem));
+
+            // Slider functionality
+            const track = document.getElementById('gallery-track');
+            const slides = track.querySelectorAll('.slider-slide');
+            const prevBtn = document.getElementById('prev-gallery-btn');
+            const nextBtn = document.getElementById('next-gallery-btn');
+            
+            let currentIndex = 0;
+            
+            const updateSlider = () => {
+                if (slides.length === 0) return;
+                
+                const slideWidth = slides[0].getBoundingClientRect().width;
+                const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
+                
+                let translateAmount = currentIndex * (slideWidth + gap);
+                
+                // Get container dimensions to cap translation
+                const viewportWidth = track.parentElement.getBoundingClientRect().width;
+                const trackWidth = track.scrollWidth;
+                const maxTranslate = Math.max(0, trackWidth - viewportWidth);
+                
+                if (translateAmount > maxTranslate) {
+                    translateAmount = maxTranslate;
+                }
+                
+                track.style.transform = `translateX(-${translateAmount}px)`;
+                
+                // Update button disabled state
+                prevBtn.disabled = currentIndex === 0;
+                nextBtn.disabled = translateAmount >= maxTranslate;
+            };
+            
+            nextBtn.addEventListener('click', () => {
+                const slideWidth = slides[0].getBoundingClientRect().width;
+                const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
+                const viewportWidth = track.parentElement.getBoundingClientRect().width;
+                const trackWidth = track.scrollWidth;
+                const maxTranslate = Math.max(0, trackWidth - viewportWidth);
+                
+                const nextTranslate = (currentIndex + 1) * (slideWidth + gap);
+                
+                if (nextTranslate <= maxTranslate) {
+                    currentIndex++;
+                } else {
+                    const currentTranslate = currentIndex * (slideWidth + gap);
+                    if (currentTranslate < maxTranslate) {
+                        currentIndex++;
+                    }
+                }
+                updateSlider();
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSlider();
+                }
+            });
+            
+            // Adjust slider positions on resize
+            window.addEventListener('resize', updateSlider);
+            
+            // Call initially once image assets might have loaded
+            setTimeout(updateSlider, 200);
+            window.addEventListener('load', updateSlider);
+
+            // Lightbox functionality
+            const lightbox = document.getElementById('gallery-lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const lightboxClose = document.getElementById('lightbox-close');
+            
+            slides.forEach(slide => {
+                slide.addEventListener('click', () => {
+                    const img = slide.querySelector('img');
+                    const captionText = slide.getAttribute('data-caption');
+                    
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                    lightboxCaption.textContent = captionText;
+                    
+                    lightbox.style.display = 'flex';
+                    // Force reflow for transitions
+                    lightbox.offsetHeight;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Disable page scrolling
+                });
+            });
+            
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = ''; // Enable page scrolling
+                setTimeout(() => {
+                    if (!lightbox.classList.contains('active')) {
+                        lightbox.style.display = 'none';
+                    }
+                }, 350); // Match CSS transition timing
+            };
+            
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox || e.target.classList.contains('lightbox')) {
+                    closeLightbox();
+                }
+            });
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

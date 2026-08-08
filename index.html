@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Paras Garg - Professional Game Designer portfolio specializing in gameplay systems, mechanics, and player psychology.">
+    <title>Paras Garg | Game Designer & Systems Architect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Background Canvas & Nebulae -->
+    <canvas id="space-canvas"></canvas>
+    <div class="nebula nebula-purple"></div>
+    <div class="nebula nebula-cyan"></div>
+    <div class="nebula nebula-center"></div>
+
+    <!-- Header & Sticky Navigation -->
+    <header>
+        <div class="nav-container">
+            <p class="logo">
+                |PG|
+            </p>
+            <button class="menu-toggle" aria-label="Toggle Menu">&#x2630;</button>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link active">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="Game_Design_Resume.pdf" target="_blank" class="nav-link">Resume</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- About / Hero Section -->
+        <!-- Hero Section -->
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-container">
+                <div class="hero-grid">
+                    <div class="hero-text-container reveal-on-scroll">
+                        <h1 class="hero-name-large">PARAS <span class="name-highlight">GARG</span></h1>
+                        <div class="hero-typewriter-container">
+                            <span id="typewriter-text"></span><span class="typewriter-cursor"> </span>
+                        </div>
+                        <p class="hero-desc-styled">
+                            Crafting immersive experiences through thoughtful mechanics, balanced systems and compelling
+                            level design.
+                        </p>
+                        <div class="hero-btn-group">
+                            <a href="#projects" class="btn-primary">
+                                View Projects
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                            <a href="#contact" class="btn-secondary">Get In Touch</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual reveal-on-scroll" style="transition-delay: 0.15s;">
+                        <div class="hero-visual-wrapper">
+                            <div class="banner-image-container">
+                                <img src="Background_Banner.png" alt="Game Design Desk Banner" class="banner-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="reveal-on-scroll">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-text-container">
+                    <p class="about-desc">
+                        I'm a <strong>Game Designer</strong> passionate about crafting engaging, balanced and memorable
+                        player experiences.
+                    </p>
+                    <p class="about-desc">
+                        With hands-on experience in digital and physical game design, prototyping and
+                        competitive game jams, I bridge the gap between creative vision and technical execution. I carry
+                        a strong understanding of gameplay systems, mechanics and player behaviour.
+                    </p>
+                    <p class="about-desc">
+                        Experienced in identifying design and functionality issues through structured testing and clear
+                        documentation. I'm comfortable working with technical concepts, with a strong foundation in
+                        coding languages and gameplay scripting.
+                    </p>
+
+                    <div class="about-competencies-grid">
+                        <div class="competency-card">
+                            <svg class="checkmark-icon" viewBox="0 0 24 24" width="20" height="20" fill="none"
+                                stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="competency-text">Level Design & Player Flow</span>
+                        </div>
+                        <div class="competency-card">
+                            <svg class="checkmark-icon" viewBox="0 0 24 24" width="20" height="20" fill="none"
+                                stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="competency-text">Game Systems & Mechanics</span>
+                        </div>
+                        <div class="competency-card">
+                            <svg class="checkmark-icon" viewBox="0 0 24 24" width="20" height="20" fill="none"
+                                stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="competency-text">Playtesting & QA Documentation</span>
+                        </div>
+                        <div class="competency-card">
+                            <svg class="checkmark-icon" viewBox="0 0 24 24" width="20" height="20" fill="none"
+                                stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="competency-text">Team Leadership & Communication</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-visual-container reveal-on-scroll" style="transition-delay: 0.15s;">
+                    <div class="about-profile-card">
+                        <div class="card-dot-decor"></div>
+                        <div class="profile-avatar-circle">
+                            PG
+                        </div>
+                        <h3 class="profile-name">Paras Garg</h3>
+                        <span class="profile-role">Game Designer</span>
+
+                        <div class="profile-details-list">
+                            <div class="profile-detail-item">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <span>Punjab, India</span>
+                            </div>
+                            <div class="profile-detail-item">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <span>gargparas2005@gmail.com</span>
+                            </div>
+                            <div class="profile-detail-item">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg>
+                                <span>+91-9854500096</span>
+                            </div>
+                            <div class="profile-detail-item">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                                </svg>
+                                <span>B.Tech CSE (Game Design) · 2027</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-title reveal-on-scroll">Design Competence</h2>
+            <div class="skills-grid reveal-on-scroll">
+                <!-- Category 1 -->
+                <div class="skills-category glass-panel">
+                    <h3 class="skills-cat-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                        Game Design
+                    </h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-bullet"></span>Mechanics & Core Loop Design</li>
+                        <li class="skill-item"><span class="skill-bullet"></span>Game Design Documentation (GDD)</li>
+                        <li class="skill-item"><span class="skill-bullet"></span>Spatial Pacing & Level Design</li>
+                        <li class="skill-item"><span class="skill-bullet"></span>Gameplay Balancing & Risk-Reward Design
+                        </li>
+                        <li class="skill-item"><span class="skill-bullet"></span>Asymmetrical Gameplay Systems</li>
+                        <li class="skill-item"><span class="skill-bullet"></span>Progression Systems</li>
+                        <li class="skill-item"><span class="skill-bullet"></span>Quick Prototyping</li>
+                        <li class="skill-item"><span class="skill-bullet"></span>Economy Balancing</li>
+                    </ul>
+                </div>
+                <!-- Category 2 -->
+                <div class="skills-category glass-panel">
+                    <h3 class="skills-cat-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        Testing & Analysis
+                    </h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-bullet"></span>Functional Gameplay Playtesting</li>
+                        <li class="skill-item"><span class="skill-bullet"></span>System Efficacy & Balancing Audits</li>
+                        <li class="skill-item"><span class="skill-bullet"></span>Edge-Case Scenario Testing</li>
+                        <li class="skill-item"><span class="skill-bullet"></span>Clear Issue Documentation & Logs</li>
+                        <li class="skill-item"><span class="skill-bullet"></span>Iterative Rule Refinement</li>
+                        <li class="skill-item"><span class="skill-bullet"></span>UX & Onboarding Evaluation</li>
+                        <li class="skill-item"><span class="skill-bullet"></span>Player Behaviour Analysis</li>
+                        <li class="skill-item"><span class="skill-bullet"></span>Feedback Integration</li>
+                    </ul>
+                </div>
+                <!-- Category 3 -->
+                <div class="skills-category glass-panel">
+                    <h3 class="skills-cat-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                            </path>
+                        </svg>
+                        Tools & Tech
+                    </h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-bullet"></span>Unity Engine (Gameplay Scripting &
+                            Prototyping)</li>
+                        <li class="skill-item"><span class="skill-bullet"></span>Unreal Engine (Blueprints)</li>
+                        <li class="skill-item"><span class="skill-bullet"></span>C++ / Python / SQL</li>
+                        <li class="skill-item"><span class="skill-bullet"></span>Photoshop (UI/UX & 2D Graphics)</li>
+                        <li class="skill-item"><span class="skill-bullet"></span>Blender (3D Graybox Modeling)</li>
+                        <li class="skill-item"><span class="skill-bullet"></span>Paper Prototyping & Layout Mapping</li>
+                        <li class="skill-item"><span class="skill-bullet"></span>Git & GitHub</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="section-title reveal-on-scroll">Featured Projects</h2>
+
+            <!-- Category Tabs Selector -->
+            <div class="project-tabs-container reveal-on-scroll">
+                <div class="project-tabs">
+                    <button class="tab-btn active" data-filter="board-games">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                            </path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                        Board Games
+                    </button>
+                    <button class="tab-btn" data-filter="digital-games">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                        Digital Games
+                    </button>
+                    <button class="tab-btn" data-filter="physical-outdoor">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M6 12A6 6 0 0 1 18 12"></path>
+                        </svg>
+                        Physical & Outdoor
+                    </button>
+                    <button class="tab-btn" data-filter="case-studies">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                        Case Studies
+                    </button>
+                </div>
+            </div>
+
+            <!-- Unified Project Cards Grid -->
+            <div class="project-grid reveal-on-scroll">
+
+                <!-- Card 1: Cross-ERA (Board Games) -->
+                <div class="project-card" data-category="board-games">
+                    <div class="card-header">
+                        <span class="genre-tag-purple">Tabletop · Strategy</span>
+                        <div class="card-tags-right">
+                            <span class="meta-tag-teal">2-4 Players</span>
+                            <span class="meta-tag-teal">Card Engine</span>
+                            <span class="meta-tag-teal">Area Movement</span>
+                        </div>
+                    </div>
+                    <!-- Project Poster Image -->
+                    <div class="card-schematic">
+                        <img src="CrossERA_Poster.png" alt="Cross-ERA Poster" class="project-poster">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Cross-ERA</h3>
+                        <div class="card-subtitle">Tabletop Strategy · Time-Travel Card Engine</div>
+                        <p class="card-summary">
+                            A 2-4 player tabletop strategy game where fractured timelines — Past, Present and Future —
+                            overlap on a single three-ring board. Players become Time Travelers collecting era-specific
+                            relics and racing to the central Nexus. Gameplay blends deterministic card management across
+                            five unique decks (Past, Present, Future, Power, Event) with a single d6 for movement,
+                            delivering deep tactical decisions in tight 20-35 minute sessions.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="bottom-tags-container">
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <circle cx="12" cy="12" r="4"></circle>
+                                </svg>
+                                3-Era Ring Board
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <rect x="18" y="3" width="4" height="18" rx="1"></rect>
+                                    <rect x="10" y="8" width="4" height="13" rx="1"></rect>
+                                    <rect x="2" y="13" width="4" height="8" rx="1"></rect>
+                                </svg>
+                                100+ Card Engine
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                                </svg>
+                                Portal & Wormhole Jumps
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                    </polygon>
+                                </svg>
+                                Dual Win Conditions
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: The Last Resistance (Board Games) -->
+                <div class="project-card" data-category="board-games">
+                    <div class="card-header">
+                        <span class="genre-tag-purple">Tabletop · Asymmetric</span>
+                        <div class="card-tags-right">
+                            <span class="meta-tag-teal">2-4 Players</span>
+                            <span class="meta-tag-teal">Hidden Role</span>
+                            <span class="meta-tag-teal">Morale System</span>
+                        </div>
+                    </div>
+                    <!-- Project Poster Image -->
+                    <div class="card-schematic">
+                        <img src="TheLastResistance_BoardGame_Poster.png" alt="The Last Resistance Board Game Poster" class="project-poster">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">The Last Resistance</h3>
+                        <div class="card-subtitle">Asymmetric Strategy · Hidden Betrayal</div>
+                        <p class="card-summary">
+                            An asymmetric Cold War board game, pitting Rebel fighters against a Soviet occupier across a
+                            divided city map. A Morale Meter governs attack viability; dual faction decks (Rebel blue vs
+                            Soviet red) create distinct playstyles and a Hidden Betrayal mechanic — reshaping board
+                            control and forcing every player to weigh trust against tactics.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="bottom-tags-container">
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                    </path>
+                                </svg>
+                                Morale Meter
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                Dual Faction Decks
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                                </svg>
+                                Hidden Betrayal Twist
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                Phase-Based Territory
+                            </span>
+                        </div>
+                        <div class="bottom-tags-container" style="margin-top: -0.25rem;">
+                            <span class="bottom-tag-yellow">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 20h9"></path>
+                                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                </svg>
+                                100% Original Mechanics
+                            </span>
+                            <span class="bottom-tag-yellow" style="margin-left: 0.5rem;">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                Narrative-Driven Design
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Atemporal (Digital Games) -->
+                <div class="project-card" data-category="digital-games">
+                    <div class="card-header">
+                        <span class="genre-tag-purple">Digital · Puzzle-Action</span>
+                        <div class="card-tags-right">
+                            <span class="meta-tag-teal">GMTK Jam</span>
+                            <span class="meta-tag-teal">Unity 2D</span>
+                            <span class="meta-tag-teal">Solo Project</span>
+                        </div>
+                    </div>
+                    <!-- Project Poster Image -->
+                    <div class="card-schematic">
+                        <img src="Atemporal_Poster.png" alt="Atemporal Poster" class="project-poster">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Atemporal</h3>
+                        <div class="card-subtitle">Time-Motion Link · Velocity Mechanics</div>
+                        <p class="card-summary">
+                            Developed a 2D time-manipulation game around the GMTK Jam theme where time moves only in
+                            proportion to the player's velocity. Engineered interactive mechanics like Phase Trails and
+                            rhythmic slime predators to challenge players' spatial pacing and kinetic reflexes.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="bottom-tags-container">
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                Time-Motion Link
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                    </polygon>
+                                </svg>
+                                Phase Trails
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                                Predator AI
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                    </polygon>
+                                </svg>
+                                GMTK Top Entry
+                            </span>
+                        </div>
+                        <div class="bottom-tags-container" style="margin-top: -0.25rem;">
+                            <span class="bottom-tag-yellow">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 20h9"></path>
+                                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                </svg>
+                                Level Layout Pacing
+                            </span>
+                            <span class="bottom-tag-yellow" style="margin-left: 0.5rem;">
+                                <svg viewBox="0 0 24 24">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                                Unity Scripting
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Before Nightfall (Digital Games) -->
+                <div class="project-card" data-category="digital-games">
+                    <div class="card-header">
+                        <span class="genre-tag-purple">Digital · Survival Sim</span>
+                        <div class="card-tags-right">
+                            <span class="meta-tag-teal">Team Project</span>
+                            <span class="meta-tag-teal">Unity 3D</span>
+                            <span class="meta-tag-teal">Lead Designer</span>
+                        </div>
+                    </div>
+                    <!-- Project Poster Image -->
+                    <div class="card-schematic">
+                        <img src="BeforeNightfall_Poster.png" alt="Before Nightfall Poster" class="project-poster">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Before Nightfall</h3>
+                        <div class="card-subtitle">Risk-Reward Loop · Concentric Level Layout</div>
+                        <p class="card-summary">
+                            Designed concentric forest zones representing escalating risk layers. Programmed
+                            day-to-night predator transition AI and a distraction mechanic where players drop gathered
+                            resources to escape. Placed in the Top 10 out of over 100 entries.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="bottom-tags-container">
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                Day/Night Shift
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12">
+                                </svg>
+                                Evasion Mechanics
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                Predator Transition
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                    </path>
+                                </svg>
+                                Resource Dropping
+                            </span>
+                        </div>
+                        <div class="bottom-tags-container" style="margin-top: -0.25rem;">
+                            <span class="bottom-tag-yellow">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 20h9"></path>
+                                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                </svg>
+                                Systems Balancing
+                            </span>
+                            <span class="bottom-tag-yellow" style="margin-left: 0.5rem;">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                </svg>
+                                Team Leadership
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Echo Protocol (Digital Games) -->
+                <div class="project-card" data-category="digital-games">
+                    <div class="card-header">
+                        <span class="genre-tag-purple">Digital · Stealth Action</span>
+                        <div class="card-tags-right">
+                            <span class="meta-tag-teal">Systems Pitch</span>
+                            <span class="meta-tag-teal">PC Gameplay</span>
+                            <span class="meta-tag-teal">Solo Design</span>
+                        </div>
+                    </div>
+                    <!-- Project Poster Image -->
+                    <div class="card-schematic">
+                        <img src="EchoProtocol_Poster.png" alt="Echo Protocol Poster" class="project-poster">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Echo Protocol</h3>
+                        <div class="card-subtitle">Stealth Extraction · Sound Mechanics</div>
+                        <p class="card-summary">
+                            Designed a stealth-extraction mechanic where blind alien predators react dynamically to
+                            auditory signatures. Firing weapons eliminates immediate threats but alerts the entire map,
+                            forcing players to balance risk and tactical silence.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="bottom-tags-container">
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 18.5a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13z"></path>
+                                    <path d="M12 2v20"></path>
+                                    <path d="M2 12h20"></path>
+                                </svg>
+                                Sound Signature
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                Intel Extraction
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                </svg>
+                                Dynamic Alert Level
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24">
+                                    </path>
+                                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                                </svg>
+                                Blind Predator AI
+                            </span>
+                        </div>
+                        <div class="bottom-tags-container" style="margin-top: -0.25rem;">
+                            <span class="bottom-tag-yellow">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 20h9"></path>
+                                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                </svg>
+                                Tension Pacing
+                            </span>
+                            <span class="bottom-tag-yellow" style="margin-left: 0.5rem;">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                    </path>
+                                </svg>
+                                Balance Architecture
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: SwitchBall (Physical & Outdoor) -->
+                <div class="project-card" data-category="physical-outdoor">
+                    <div class="card-header">
+                        <span class="genre-tag-purple">Physical · Dodgeball Hybrid</span>
+                        <div class="card-tags-right">
+                            <span class="meta-tag-teal">Outdoor Sport</span>
+                            <span class="meta-tag-teal">Rules Design</span>
+                            <span class="meta-tag-teal">Active Play</span>
+                        </div>
+                    </div>
+                    <!-- Project Poster Image -->
+                    <div class="card-schematic">
+                        <img src="SwitchBall_Poster.png" alt="SwitchBall Poster" class="project-poster">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">SwitchBall</h3>
+                        <div class="card-subtitle">Role Reversal · Spatial Dodgeball Variant</div>
+                        <p class="card-summary">
+                            Invented a straight-line setup (A-B-A-B) dodgeball variant focusing on rapid role-switching
+                            between attacking and defending. Engineered rule structures regarding catches and
+                            axis-locked dodging to maintain high pace and fairness.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="bottom-tags-container">
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <polyline points="9 21 3 21 3 15"></polyline>
+                                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                                </svg>
+                                Fixed Evasion Axis
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+                                </svg>
+                                Catch Switch Loop
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="8.5" cy="7" r="4"></circle>
+                                    <polyline points="17 11 19 13 23 9"></polyline>
+                                </svg>
+                                Role Reversal
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                                Fairness Balancing
+                            </span>
+                        </div>
+                        <div class="bottom-tags-container" style="margin-top: -0.25rem;">
+                            <span class="bottom-tag-yellow">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 20h9"></path>
+                                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                </svg>
+                                Physical Prototyping
+                            </span>
+                            <span class="bottom-tag-yellow" style="margin-left: 0.5rem;">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                </svg>
+                                Playtesting Auditing
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7: The Last Resistance AR (Case Studies) -->
+                <div class="project-card" data-category="case-studies">
+                    <div class="card-header">
+                        <span class="genre-tag-purple">Case Study · AR Systems</span>
+                        <div class="card-tags-right">
+                            <span class="meta-tag-teal">Tabletop Digitize</span>
+                            <span class="meta-tag-teal">Mobile AR</span>
+                            <span class="meta-tag-teal">Design Pitch</span>
+                        </div>
+                    </div>
+                    <!-- Project Poster Image -->
+                    <div class="card-schematic">
+                        <img src="TheLastResistance_AR_Poster.png" alt="The Last Resistance AR Poster" class="project-poster">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">The Last Resistance AR</h3>
+                        <div class="card-subtitle">Marker-Based AR · Digital Adaptation</div>
+                        <p class="card-summary">
+                            A comprehensive breakdown detailing the selective digitization of a 4-player Cold War board
+                            game. Explores automating the secret betrayal mechanic, projecting warning zones for Soviet
+                            artillery, and managing player cognitive load with floating real-time stats.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="bottom-tags-container">
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z">
+                                    </path>
+                                    <circle cx="12" cy="13" r="4"></circle>
+                                </svg>
+                                Marker Automation
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <circle cx="12" cy="12" r="6"></circle>
+                                    <circle cx="12" cy="12" r="2"></circle>
+                                </svg>
+                                Artillery Holograms
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                </svg>
+                                Cognitive Load HUD
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                                </svg>
+                                Digital Adaptation
+                            </span>
+                        </div>
+                        <div class="bottom-tags-container" style="margin-top: -0.25rem;">
+                            <span class="bottom-tag-yellow">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 20h9"></path>
+                                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                </svg>
+                                Systems Adaptation
+                            </span>
+                            <span class="bottom-tag-yellow" style="margin-left: 0.5rem;">
+                                <svg viewBox="0 0 24 24">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="9" y1="3" x2="9" y2="21"></line>
+                                </svg>
+                                UX Flow Design
+                            </span>
+                        </div>
+                        <div class="card-action-container">
+                            <a href="case-studies/the-last-resistance-ar.html" class="card-action-btn">
+                                Read Case Study
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8: Ashes Of Truth (Case Studies) -->
+                <div class="project-card" data-category="case-studies">
+                    <div class="card-header">
+                        <span class="genre-tag-purple">Case Study · Narrative</span>
+                        <div class="card-tags-right">
+                            <span class="meta-tag-teal">Systems & Level</span>
+                            <span class="meta-tag-teal">Investigation</span>
+                            <span class="meta-tag-teal">Pacing</span>
+                        </div>
+                    </div>
+                    <!-- Project Poster Image -->
+                    <div class="card-schematic">
+                        <img src="AshesOfTruth_Poster.png" alt="Ashes Of Truth Poster" class="project-poster">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Ashes Of Truth</h3>
+                        <div class="card-subtitle">Investigative Tension · Branching Flow</div>
+                        <p class="card-summary">
+                            An in-depth design study on creating mechanical weight for 'moral courage' and
+                            'truth-seeking' in a corruption-exposing narrative. Documents the narrative pacing curve
+                            across multiple levels, office/mansion layout flows and managing small explorable 3D
+                            boundaries to
+                            maintain scoping.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="bottom-tags-container">
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                                Branching Narrative
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                    <polyline points="17 6 23 6 23 12"></polyline>
+                                </svg>
+                                Pacing Curve
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                    <polyline points="2 17 12 22 22 17"></polyline>
+                                    <polyline points="2 12 12 17 22 12"></polyline>
+                                </svg>
+                                3D Exploration Limits
+                            </span>
+                            <span class="bottom-tag-outline">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                                Evidence Gathering
+                            </span>
+                        </div>
+                        <div class="bottom-tags-container" style="margin-top: -0.25rem;">
+                            <span class="bottom-tag-yellow">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 20h9"></path>
+                                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                </svg>
+                                Level Layout Pacing
+                            </span>
+                            <span class="bottom-tag-yellow" style="margin-left: 0.5rem;">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                    </path>
+                                </svg>
+                                Investigative Mechanics
+                            </span>
+                        </div>
+                        <div class="card-action-container">
+                            <a href="case-studies/ashes-of-truth.html" class="card-action-btn">
+                                Read Case Study
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2 class="section-title reveal-on-scroll">Education</h2>
+            <div class="education-timeline reveal-on-scroll">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-year">2023 — 2027</span>
+                    <h3 class="timeline-degree">B.Tech in Computer Science (Game Design Specialization)</h3>
+                    <h4 class="timeline-school">Chitkara University, Rajpura, India</h4>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-year">2021 — 2023</span>
+                    <h3 class="timeline-degree">High School Diploma (Non-Medical Science)</h3>
+                    <h4 class="timeline-school">GNF Public School, Patiala, India</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title reveal-on-scroll">Let's Connect</h2>
+            <p class="section-subtitle reveal-on-scroll">Open to Game Design roles, Internships and Collaborations.</p>
+
+            <div class="contact-grid reveal-on-scroll">
+                <!-- Email Card -->
+                <div class="contact-card">
+                    <div class="contact-card-icon-container">
+                        <div class="contact-card-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="contact-card-title">Email</h3>
+                    <p class="contact-card-value">gargparas2005@gmail.com</p>
+                    <a href="mailto:gargparas2005@gmail.com" class="contact-card-link">Send a message &rarr;</a>
+                </div>
+
+                <!-- Phone Card -->
+                <div class="contact-card">
+                    <div class="contact-card-icon-container">
+                        <div class="contact-card-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="contact-card-title">Phone</h3>
+                    <p class="contact-card-value">+91-9854500096</p>
+                    <a href="tel:+919854500096" class="contact-card-link">Call now &rarr;</a>
+                </div>
+
+                <!-- LinkedIn Card -->
+                <div class="contact-card">
+                    <div class="contact-card-icon-container">
+                        <div class="contact-card-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="contact-card-title">LinkedIn</h3>
+                    <p class="contact-card-value">Connect on LinkedIn</p>
+                    <a href="https://www.linkedin.com/in/paras-garg-3b9a46327/" target="_blank"
+                        class="contact-card-link">Profile &rarr;</a>
+                </div>
+
+                <!-- Location Card -->
+                <div class="contact-card">
+                    <div class="contact-card-icon-container">
+                        <div class="contact-card-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2a10 10 0 0 0-10 10c0 5.25 10 12 10 12s10-6.75 10-12a10 10 0 0 0-10-10z">
+                                </path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="contact-card-title">Location</h3>
+                    <p class="contact-card-value">Punjab, India</p>
+                    <p class="contact-card-link">Open to Relocate</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                &copy; 2026 Paras Garg. All systems operational.
+            </div>
+            <div class="footer-credits">
+                Designed for <span>Gameplay & Level Systems</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

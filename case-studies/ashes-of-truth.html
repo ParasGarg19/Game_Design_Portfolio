@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="GDC Case Study: Ashes of Truth - Narrative pacing, investigative mechanics, and scoping in a 3D narrative thriller.">
+    <title>Ashes Of Truth | Game Design Case Study</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <canvas id="space-canvas"></canvas>
+    <div class="nebula nebula-purple"></div>
+    <div class="nebula nebula-cyan"></div>
+
+    <!-- Floating Navigation Back Button -->
+    <nav class="back-nav">
+        <a href="../index.html#projects" class="back-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Portfolio
+        </a>
+    </nav>
+
+    <!-- 1 Hero Banner -->
+    <header class="hero-banner">
+        <div class="hero-banner-content">
+            <span class="banner-tag">Systems & Narrative Design Case Study</span>
+            <h1 class="banner-title">Ashes Of Truth</h1>
+            <p class="banner-subtitle">Structuring investigative tension, 3D exploration limits and level pacing in a PC
+                narrative thriller.</p>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="case-study-container">
+        <!-- Main Case Study Content -->
+        <main class="case-study-main">
+            <!-- 3 Project Overview -->
+            <section id="overview" class="reveal-on-scroll">
+                <h2 class="section-header">Project Overview</h2>
+                <p class="case-paragraph">
+                    <strong>Ashes of Truth</strong> is a first-person narrative thriller focusing on a junior news
+                    investigator uncovering a deep corporate conspiracy surrounding a burned mansion. The game was
+                    designed for the theme of "Women Empowerment"—defining strength not through physical combat
+                    dominance, but through curiosity, investigative determination and moral courage.
+                </p>
+                <p class="case-paragraph">
+                    Rather than building an action-oriented game, our team focused on creating a grounded thriller. The
+                    player must navigate discrete locations, interrogate suspects, compile profiles and escape hostile
+                    ambush encounters while protecting their gathered evidence.
+                </p>
+            </section>
+
+            <!-- 4 Design Challenge -->
+            <section id="challenge" class="reveal-on-scroll">
+                <h2 class="section-header">The Design Challenge</h2>
+                <div class="callout-panel">
+                    <p class="case-paragraph" style="margin-bottom: 0;">
+                        How do we design a compelling investigative thriller without resorting to traditional combat or
+                        puzzle placeholders? We had to create mechanics that make the player feel like an active
+                        detective—uncovering leads naturally—while working within a tight one week development timeframe
+                        that restricted our ability to build a fully realized 3D city.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 5 Design Goals -->
+            <section id="goals" class="reveal-on-scroll">
+                <h2 class="section-header">Design Goals</h2>
+                <ul class="case-list">
+                    <li class="case-list-item"><strong>Empower Through Intellect:</strong> Establish an investigative
+                        core loop where players connect clues to suspect profiles.</li>
+                    <li class="case-list-item"><strong>Strict Scoping:</strong> Design a hybrid 2D/3D structure to
+                        bypass the engineering cost of an open-world navigation system.</li>
+                    <li class="case-list-item"><strong>Paced Narrative Escalation:</strong> Map a narrative arc across
+                        different level scenes, moving from safe office routines to tense stealth confrontations.</li>
+                    <li class="case-list-item"><strong>Survival-Oriented Evasion:</strong> Combat must feel threatening,
+                        forcing evasion, hiding and quick thinking rather than confrontation.</li>
+                </ul>
+            </section>
+
+            <!-- 6 Core Gameplay Loop -->
+            <section id="loop" class="reveal-on-scroll">
+                <h2 class="section-header">Core Gameplay Loop</h2>
+                <p class="case-paragraph">
+                    The player follows a loop of discovery, navigation, search and validation:
+                </p>
+                <div class="diagram-container">
+                    <div class="loop-flow">
+                        <div class="loop-node">
+                            <div class="loop-node-icon">🔍</div>
+                            <span class="loop-node-title">Receive Lead</span>
+                        </div>
+                        <div class="loop-arrow"></div>
+                        <div class="loop-node">
+                            <div class="loop-node-icon">🗺️</div>
+                            <span class="loop-node-title">2D Map Travel</span>
+                        </div>
+                        <div class="loop-arrow"></div>
+                        <div class="loop-node">
+                            <div class="loop-node-icon">🔦</div>
+                            <span class="loop-node-title">3D Search Clues</span>
+                        </div>
+                        <div class="loop-arrow"></div>
+                        <div class="loop-node">
+                            <div class="loop-node-icon">📝</div>
+                            <span class="loop-node-title">Update Profile</span>
+                        </div>
+                    </div>
+                    <span class="diagram-caption">Figure: Narrative-driven loop linking 2D travel navigation with 3D
+                        clue search.</span>
+                </div>
+            </section>
+
+            <!-- 7 Core Systems -->
+            <section id="systems" class="reveal-on-scroll">
+                <h2 class="section-header">Core Systems</h2>
+                <h3 class="subsection-header">1. 2D Travel Map</h3>
+                <p class="case-paragraph">
+                    To bypass building large travel zones, we created a 2D fast-travel interface. Players select
+                    discovered locations (News Office, Mansion, Slum, Forest Cabin) on a retro-styled vector map. This
+                    kept focus entirely on high-detail 3D environmental spaces.
+                </p>
+                <h3 class="subsection-header">2. Suspect Profiler Board</h3>
+                <p class="case-paragraph">
+                    Collected clues are logged into a suspect database. The player manually links clues (e.g. *burned
+                    note fragments*) to specific suspect profiles (*The Businessman, The Mercenary*). This visual
+                    feedback loop rewards players for drawing connections.
+                </p>
+                <h3 class="subsection-header">3. Survival Evasion</h3>
+                <p class="case-paragraph">
+                    When gangsters ambush the forest hideout (Scene 10) and final mansion return (Scene 16), the
+                    gameplay shifts to high-tension evasion. The player has no weapons. They must use environmental
+                    layouts—ducking behind crates, utilizing darkness and timing escapes—to survive.
+                </p>
+            </section>
+
+            <!-- 8 Design Decisions -->
+            <section id="decisions" class="reveal-on-scroll">
+                <h2 class="section-header">Design Decisions & Scope Management</h2>
+                <p class="case-paragraph">
+                    Managing scope was critical to releasing the prototype on time. Here is how we adjusted our design:
+                </p>
+                <table
+                    style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid rgba(255, 255, 255, 0.1); color: #ffffff;">
+                            <th style="padding: 0.75rem;">Original Design Concept</th>
+                            <th style="padding: 0.75rem;">Scoped Iteration</th>
+                            <th style="padding: 0.75rem;">Design Value / Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                            <td style="padding: 0.75rem; font-weight: 600; color: var(--accent-cyan);">Open World Town
+                                Map</td>
+                            <td style="padding: 0.75rem; font-weight: 600; color: var(--accent-purple);">2D Interactive
+                                Map Interface</td>
+                            <td style="padding: 0.75rem;">Saved 60% of art/level production time, allowing us to focus
+                                on 3D mansion details.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                            <td style="padding: 0.75rem; font-weight: 600; color: var(--accent-cyan);">Dynamic Gunplay
+                                Combat</td>
+                            <td style="padding: 0.75rem; font-weight: 600; color: var(--accent-purple);">Stealth Evasion
+                                & Evasion</td>
+                            <td style="padding: 0.75rem;">Reinforced the thematic hook of a vulnerable protagonist using
+                                wits over power.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                            <td style="padding: 0.75rem; font-weight: 600; color: var(--accent-cyan);">Complex Physics
+                                Puzzles</td>
+                            <td style="padding: 0.75rem; font-weight: 600; color: var(--accent-purple);">Dialogue-Driven
+                                Clue Triggers</td>
+                            <td style="padding: 0.75rem;">Aligned mechanics with investigative gameplay and reduced
+                                programming dependency.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- 9 Problems Faced -->
+            <section id="problems" class="reveal-on-scroll">
+                <h2 class="section-header">Problems Faced</h2>
+                <h3 class="subsection-header">Clue Hunting Fatigue</h3>
+                <p class="case-paragraph">
+                    During early tests, players complained that searching the 3D mansion for clues felt like
+                    pixel-hunting. Since evidence matched the desaturated environment aesthetic, players walked right
+                    past critical case files.
+                </p>
+                <h3 class="subsection-header">Pacing Drops during Dialogue</h3>
+                <p class="case-paragraph">
+                    Long, non-interactive text boxes slowed down the pacing during slums investigation scenes, breaking
+                    the tension built up during earlier stages.
+                </p>
+            </section>
+
+            <!-- 10 Iterations -->
+            <section id="iterations" class="reveal-on-scroll">
+                <h2 class="section-header">Design Iterations</h2>
+                <div class="comparison-grid">
+                    <div class="callout-panel">
+                        <div class="callout-title">Iteration 1: Hidden Clues</div>
+                        <p class="case-paragraph" style="font-size: 0.95rem;">
+                            Clues were placed naturally in drawers and desks without any highlights, relying entirely on
+                            raw exploration.
+                            <br><br>
+                            <strong>Result:</strong> Playtesters felt frustrated, spending up to 20 minutes
+                            search-clicking single rooms.
+                        </p>
+                    </div>
+                    <div class="callout-panel cyan">
+                        <div class="callout-title">Iteration 2: Subtle Shimmer Highlight</div>
+                        <p class="case-paragraph" style="font-size: 0.95rem;">
+                            Added a subtle glowing dust shader (shimmer effect) that triggers when the player gets
+                            within 3 meters of evidence, paired with a soft UI sound cue.
+                            <br><br>
+                            <strong>Result:</strong> Success. Maintained search immersion while eliminating player
+                            search fatigue.
+                        </p>
+                    </div>
+                </div>
+                <h3 class="subsection-header">Resolving Pacing: Key Choice Dialogue</h3>
+                <p class="case-paragraph">
+                    To make dialogue engaging, we iterated the conversation structure. Dialogues were converted into
+                    short suspect-interrogation blocks where the player chooses question categories (e.g. *Mansion Fire,
+                    Alibi, Suspect connections*). Selecting categories dynamically unlocks profile updates.
+                </p>
+            </section>
+
+            <!-- 11 Playtesting -->
+            <section id="playtesting" class="reveal-on-scroll">
+                <h2 class="section-header">Playtesting Outcomes</h2>
+                <p class="case-paragraph">
+                    Playtesting sessions conducted with internal developers yielded the following feedback:
+                </p>
+                <ul class="case-list">
+                    <li class="case-list-item"><strong>Clue Findability:</strong> Adding the shader shimmer highlights
+                        improved the clue retrieval rate by 70%.</li>
+                    <li class="case-list-item"><strong>Engagement:</strong> 85% of players successfully linked evidence
+                        to the correct profiles on their first attempt, confirming UI board clarity.</li>
+                    <li class="case-list-item"><strong>Ambush Evasion:</strong> Evasion pacing was balanced after adding
+                        warning audio cues (e.g. doors crashing open) 3 seconds before gangsters enter the space.</li>
+                </ul>
+            </section>
+
+            <!-- 12 Lessons Learned -->
+            <section id="lessons" class="reveal-on-scroll">
+                <h2 class="section-header">Lessons Learned</h2>
+                <p class="case-paragraph">
+                    <strong>Affordance is Critical:</strong> In exploration games, the boundary between "immersive
+                    searching" and "tedious hunting" is thin. Designers must provide clear visual and auditory
+                    affordances (highlights, sound cues) to keep players focused on making deductions rather than
+                    fighting the camera interface.
+                </p>
+            </section>
+
+            <!-- 13 Final Outcome -->
+            <section id="outcome" class="reveal-on-scroll">
+                <h2 class="section-header">Final Outcome</h2>
+                <p class="case-paragraph">
+                    The vertical slice successfully demonstrated Level 1 (Office introduction) and Level 2 (First
+                    Mansion exploration). By keeping a tight scope with our hybrid 2D/3D structure, we delivered a
+                    polished prototype highlighting our team's core narrative design, pacing structure and systems
+                    balancing capability.
+                </p>
+            </section>
+
+            <!-- 14 Gallery -->
+            <section id="gallery" class="reveal-on-scroll">
+                <div class="gallery-header">
+                    <h2 class="section-header">Gallery</h2>
+                    <div class="slider-controls">
+                        <button class="slider-btn prev-btn" id="prev-gallery-btn" aria-label="Previous image">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <button class="slider-btn next-btn" id="next-gallery-btn" aria-label="Next image">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-viewport">
+                        <div class="slider-track" id="gallery-track">
+                            <div class="slider-slide" data-caption="Ashes of Truth Title Poster">
+                                <img src="../Ashes_of_Truth_Gallery/Game_Poster.png" alt="Ashes of Truth Title Poster">
+                                <div class="slide-caption-overlay">
+                                    <span class="slide-title">Ashes of Truth Title Poster</span>
+                                </div>
+                            </div>
+                            <div class="slider-slide" data-caption="Investigative Case Report UI">
+                                <img src="../Ashes_of_Truth_Gallery/Case_Report.png" alt="Investigative Case Report UI">
+                                <div class="slide-caption-overlay">
+                                    <span class="slide-title">Investigative Case Report UI</span>
+                                </div>
+                            </div>
+                            <div class="slider-slide" data-caption="Character Profile: Mafia Boss">
+                                <img src="../Ashes_of_Truth_Gallery/Mafia_Boss.png" alt="Character Profile: Mafia Boss">
+                                <div class="slide-caption-overlay">
+                                    <span class="slide-title">Character Profile: Mafia Boss</span>
+                                </div>
+                            </div>
+                            <div class="slider-slide" data-caption="Character Profile: The Mercenary">
+                                <img src="../Ashes_of_Truth_Gallery/Mercenary.png" alt="Character Profile: The Mercenary">
+                                <div class="slide-caption-overlay">
+                                    <span class="slide-title">Character Profile: The Mercenary</span>
+                                </div>
+                            </div>
+                            <div class="slider-slide" data-caption="Evidence Clue: Burned Note">
+                                <img src="../Ashes_of_Truth_Gallery/Burned_Note.png" alt="Evidence Clue: Burned Note">
+                                <div class="slide-caption-overlay">
+                                    <span class="slide-title">Evidence Clue: Burned Note</span>
+                                </div>
+                            </div>
+                            <div class="slider-slide" data-caption="Evidence Clue: Burned Photo">
+                                <img src="../Ashes_of_Truth_Gallery/Burned_Photo.png" alt="Evidence Clue: Burned Photo">
+                                <div class="slide-caption-overlay">
+                                    <span class="slide-title">Evidence Clue: Burned Photo</span>
+                                </div>
+                            </div>
+                            <div class="slider-slide" data-caption="Character Profile: Slum Resident">
+                                <img src="../Ashes_of_Truth_Gallery/Slum_Person1.png" alt="Character Profile: Slum Resident">
+                                <div class="slide-caption-overlay">
+                                    <span class="slide-title">Character Profile: Slum Resident</span>
+                                </div>
+                            </div>
+                            <div class="slider-slide" data-caption="Character Profile: Slum Witness">
+                                <img src="../Ashes_of_Truth_Gallery/Slum_Person3.png" alt="Character Profile: Slum Witness">
+                                <div class="slide-caption-overlay">
+                                    <span class="slide-title">Character Profile: Slum Witness</span>
+                                </div>
+                            </div>
+                            <div class="slider-slide" data-caption="Evidence Clue: Victim's Diary">
+                                <img src="../Ashes_of_Truth_Gallery/Victim's_Diary.png" alt="Evidence Clue: Victim's Diary">
+                                <div class="slide-caption-overlay">
+                                    <span class="slide-title">Evidence Clue: Victim's Diary</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 2 Design Snapshot Sidebar -->
+        <aside class="design-snapshot glass-panel reveal-on-scroll" style="transition-delay: 0.1s;">
+            <h3 class="snapshot-title">Design Snapshot</h3>
+            <div class="snapshot-grid">
+                <div class="snapshot-item">
+                    <span class="snapshot-label">Role</span>
+                    <span class="snapshot-value accent">Lead Systems & Narrative Designer</span>
+                </div>
+                <div class="snapshot-item">
+                    <span class="snapshot-label">Team Size</span>
+                    <span class="snapshot-value">3 Developers</span>
+                </div>
+                <div class="snapshot-item">
+                    <span class="snapshot-label">Duration</span>
+                    <span class="snapshot-value">1 Week</span>
+                </div>
+                <div class="snapshot-item">
+                    <span class="snapshot-label">Engine</span>
+                    <span class="snapshot-value">Unity (3D URP) + 2D Mapping</span>
+                </div>
+                <div class="snapshot-item">
+                    <span class="snapshot-label">Platform</span>
+                    <span class="snapshot-value">PC (Steam/itch.io)</span>
+                </div>
+                <div class="snapshot-item">
+                    <span class="snapshot-label">Genre</span>
+                    <span class="snapshot-value">Narrative Thriller / Investigation</span>
+                </div>
+                <div class="snapshot-item">
+                    <span class="snapshot-label">Design Focus</span>
+                    <span class="snapshot-value">Level Pacing, Dialogue Systems, World Exploration, Scope
+                        Balancing</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                &copy; 2026 Paras Garg. All systems operational.
+            </div>
+            <div class="footer-text">
+                Ashes of Truth Postmortem
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="gallery-lightbox" class="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Space canvas setup
+            const canvas = document.getElementById('space-canvas');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                let stars = [];
+                const maxStars = 800;
+
+                const resizeCanvas = () => {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                    stars = [];
+                    for (let i = 0; i < maxStars; i++) {
+                        stars.push({
+                            x: Math.random() * canvas.width,
+                            y: Math.random() * canvas.height,
+                            size: Math.random() * 1.1,
+                            brightness: Math.random(),
+                            speed: 0.005 + Math.random() * 0.01
+                        });
+                    }
+                };
+
+                const animate = () => {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    for (let star of stars) {
+                        star.brightness += star.speed;
+                        if (star.brightness > 1 || star.brightness < 0) {
+                            star.speed = -star.speed;
+                        }
+                        ctx.fillStyle = `rgba(255, 255, 255, ${Math.min(star.brightness, 0.8)})`;
+                        ctx.beginPath();
+                        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                    requestAnimationFrame(animate);
+                };
+
+                window.addEventListener('resize', resizeCanvas);
+                resizeCanvas();
+                animate();
+            }
+
+            // Scroll reveal
+            const revealElements = document.querySelectorAll('.reveal-on-scroll');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                rootMargin: '0px 0px -100px 0px',
+                threshold: 0.1
+            });
+            revealElements.forEach(elem => revealObserver.observe(elem));
+
+            // Slider functionality
+            const track = document.getElementById('gallery-track');
+            const slides = track.querySelectorAll('.slider-slide');
+            const prevBtn = document.getElementById('prev-gallery-btn');
+            const nextBtn = document.getElementById('next-gallery-btn');
+            
+            let currentIndex = 0;
+            
+            const updateSlider = () => {
+                if (slides.length === 0) return;
+                
+                const slideWidth = slides[0].getBoundingClientRect().width;
+                const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
+                
+                let translateAmount = currentIndex * (slideWidth + gap);
+                
+                // Get container dimensions to cap translation
+                const viewportWidth = track.parentElement.getBoundingClientRect().width;
+                const trackWidth = track.scrollWidth;
+                const maxTranslate = Math.max(0, trackWidth - viewportWidth);
+                
+                if (translateAmount > maxTranslate) {
+                    translateAmount = maxTranslate;
+                }
+                
+                track.style.transform = `translateX(-${translateAmount}px)`;
+                
+                // Update button disabled state
+                prevBtn.disabled = currentIndex === 0;
+                nextBtn.disabled = translateAmount >= maxTranslate;
+            };
+            
+            nextBtn.addEventListener('click', () => {
+                const slideWidth = slides[0].getBoundingClientRect().width;
+                const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
+                const viewportWidth = track.parentElement.getBoundingClientRect().width;
+                const trackWidth = track.scrollWidth;
+                const maxTranslate = Math.max(0, trackWidth - viewportWidth);
+                
+                const nextTranslate = (currentIndex + 1) * (slideWidth + gap);
+                
+                if (nextTranslate <= maxTranslate) {
+                    currentIndex++;
+                } else {
+                    const currentTranslate = currentIndex * (slideWidth + gap);
+                    if (currentTranslate < maxTranslate) {
+                        currentIndex++;
+                    }
+                }
+                updateSlider();
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSlider();
+                }
+            });
+            
+            // Adjust slider positions on resize
+            window.addEventListener('resize', updateSlider);
+            
+            // Call initially once image assets might have loaded
+            setTimeout(updateSlider, 200);
+            window.addEventListener('load', updateSlider);
+
+            // Lightbox functionality
+            const lightbox = document.getElementById('gallery-lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const lightboxClose = document.getElementById('lightbox-close');
+            
+            slides.forEach(slide => {
+                slide.addEventListener('click', () => {
+                    const img = slide.querySelector('img');
+                    const captionText = slide.getAttribute('data-caption');
+                    
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                    lightboxCaption.textContent = captionText;
+                    
+                    lightbox.style.display = 'flex';
+                    // Force reflow for transitions
+                    lightbox.offsetHeight;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Disable page scrolling
+                });
+            });
+            
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = ''; // Enable page scrolling
+                setTimeout(() => {
+                    if (!lightbox.classList.contains('active')) {
+                        lightbox.style.display = 'none';
+                    }
+                }, 350); // Match CSS transition timing
+            };
+            
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox || e.target.classList.contains('lightbox')) {
+                    closeLightbox();
+                }
+            });
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
