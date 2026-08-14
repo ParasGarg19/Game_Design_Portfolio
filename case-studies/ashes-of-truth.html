@@ -408,8 +408,23 @@
         <div id="lightbox-caption"></div>
     </div>
 
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Lenis Smooth Scroll Initialization
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // EaseOutExpo
+                smoothWheel: true,
+                smoothTouch: false
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+
             // Space canvas setup
             const canvas = document.getElementById('space-canvas');
             if (canvas) {
@@ -553,12 +568,14 @@
                     lightbox.offsetHeight;
                     lightbox.classList.add('active');
                     document.body.style.overflow = 'hidden'; // Disable page scrolling
+                    lenis.stop(); // Stop smooth scroll while lightbox is open
                 });
             });
             
             const closeLightbox = () => {
                 lightbox.classList.remove('active');
                 document.body.style.overflow = ''; // Enable page scrolling
+                lenis.start(); // Resume smooth scroll
                 setTimeout(() => {
                     if (!lightbox.classList.contains('active')) {
                         lightbox.style.display = 'none';

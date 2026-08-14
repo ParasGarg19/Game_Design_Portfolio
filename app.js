@@ -1,5 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
     // -------------------------------------------------------------
+    // Lenis Smooth Scroll Initialization
+    // -------------------------------------------------------------
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // EaseOutExpo
+        smoothWheel: true,
+        smoothTouch: false
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                lenis.scrollTo(targetElement);
+            }
+        });
+    });
+
+    // Handle initial load with hash in URL
+    if (window.location.hash) {
+        setTimeout(() => {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+                lenis.scrollTo(target, { immediate: false });
+            }
+        }, 150);
+    }
+
+    // -------------------------------------------------------------
     // Space Background (Stars & Shooting Stars Canvas Animation)
     // -------------------------------------------------------------
     const canvas = document.getElementById('space-canvas');
